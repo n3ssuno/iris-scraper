@@ -1,0 +1,17 @@
+[Unit]
+Description=IRIS scraper
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Documents/iris-scraper
+ExecStart=/usr/bin/npm run %I
+Restart=on-failure
+RestartSec=60
+TimeoutSec=150
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

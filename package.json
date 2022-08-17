@@ -1,0 +1,26 @@
+{
+  "name": "IRIS_scraper",
+  "version": "1.0.0",
+  "description": "Script to find the VPM pages of recipients of US Federal funds and/or of patent assignees connected to them. It can scrape several sources for the websites of these corporations and than look into these websites for the related patents. Part of the IRIS project",
+  "scripts": {
+    "website": "node scrape-for-websites.js -i data/data_from_database/data.jsonl -o data/data_from_websites_scraper/results.jsonl --sbir false --proxy false --timestamp false",
+    "website_sbir": "node scrape-for-websites.js -i data/data_from_database/data.jsonl -o data/data_from_websites_scraper/results.jsonl --sbir true --proxy false --timestamp false",
+    "vpm": "node scrape-for-vpm-pages.js -i data/data_from_websites_scraper/results_clean.jsonl -o data/data_from_vpm-pages_scraper/results.jsonl --proxy false --timestamp false"
+  },
+  "author": "Carlo Bottai <c.bottai@tue.nl>",
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "chalk": "^4.0.0",
+    "fs-extra": "^8.1.0",
+    "got": "^11.8.1",
+    "log-timestamp": "^0.3.0",
+    "minimist": "^1.2.5",
+    "os": "*",
+    "puppeteer-core": "^5.2.1",
+    "puppeteer-extra": "*",
+    "puppeteer-extra-plugin-block-resources": "^2.2.7",
+    "puppeteer-extra-plugin-stealth": "^2.4.14",
+    "user-agents": "^1.0.559"
+  }
+}
