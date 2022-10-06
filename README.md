@@ -74,7 +74,7 @@ The scrapers can be fine-tuned through some parameters that you can modify in th
 
 If you work in a GNU/Linux environment, you can have some basic statistics about the ongoing scraping process by running ``./stats.sh website`` (or ``vpm`` according to the step you are actually running)
 
-[3] For now, this script is in Python. I advice you to execute it within a Conda environment. The ``json`` and ``datetime`` Python packages must be installed. Moreover, you must install the ``iris-utils`` package from the [iris-utils](https://gitlab.tue.nl/iris/iris-utils) repository. The advice is to re-use the environment of the [iris-database](https://gitlab.tue.nl/iris/iris-database) repository.
+[3] For now, this script is in Python. I advice you to execute it within a Conda environment. The ``json`` and ``datetime`` Python packages must be installed. The advice is to re-use the environment of the [iris-database](https://gitlab.tue.nl/iris/iris-database) repository.
 
 ## Working of the Systemd daemons
 When you start one of the daemons, the script will start (provided that you have a working Internet connection) and will restart every time you switch on your RPi and get connected to the Internet.<br>
