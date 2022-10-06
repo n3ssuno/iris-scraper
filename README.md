@@ -8,7 +8,7 @@ To reproduce the results, please follow these steps [1]
 2. Install [Git](https://git-scm.com/) running ``sudo apt install -y git jq``
 3. Clone this repository
     * ``cd ~/Documents``
-    * ``git clone https://gitlab.tue.nl/iris/iris-scraper.git``
+    * ``git clone https://github.com/n3ssuno/iris-scraper.git``
     * ``cd iris-scraper``
 4. Install [Node.js](https://nodejs.org/)
     * If you are using a RPi Zero or a RPi 1 (i.e., a device with a ARMv6 architecture) use the following script (be aware that the support for this architecture is experimental)
@@ -20,6 +20,11 @@ To reproduce the results, please follow these steps [1]
 6. Add a ``data.jsonl`` file with the information to scrape the ``data/data_from_database/`` folder
 7. Create a new daemon that manages the scraping script
     * ``sudo cp iris-scraper@.service /etc/systemd/system/``
+
+If needed, you can add ``iris_utils`` as a submodule with (this should be already in place after point 2 above):
+* ``git submodule add https://github.com/n3ssuno/iris-utils.git iris_utils``
+* ``git commit -m "Add iris-utils submodule"``
+* ``git push``
 
 [1] Note that, for this part of the IRIS project, the results cannot be perfectly reproduced, since they depend on many factors, some of which random and/or time-evolving.
 
